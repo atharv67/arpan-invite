@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ── Custom Design Tokens ────────────────────────────────────────────────── */
+@theme {
+  /* Color palette */
+  --color-maroon:     #4A0E0E;
+  --color-gold:       #D4AF37;
+  --color-saffron:    #FF6B00;
+  --color-ivory:      #FDF8F0;
+  --color-purple:     #5B2D8E;
+  --color-charcoal:   #1A0A00;
+  --color-gold-light: #F0D060;
+  --color-gold-dark:  #A88520;
+
+  /* Font families — CSS vars set on <html> by next/font */
+  --font-cormorant: var(--font-cormorant-var, 'Cormorant Garamond', Georgia, serif);
+  --font-playfair:  var(--font-playfair-var,  'Playfair Display SC', Georgia, serif);
+  --font-lato:      var(--font-lato-var,      'Lato', system-ui, sans-serif);
+  --font-noto:      var(--font-noto-var,      'Noto Serif Devanagari', serif);
+  --font-fell:      var(--font-fell-var,      'IM Fell English SC', Georgia, serif);
+}
+
+/* ── Base styles ──────────────────────────────────────────────────────────── */
+:root {
+  --background: #FDF8F0;
+  --foreground: #1A0A00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-lato, 'Lato', system-ui, sans-serif);
+  overflow-x: hidden;
+}
+
+/* ── Keyframe Animations ─────────────────────────────────────────────────── */
+
+@keyframes petal-fall-1 {
+  0%   { transform: translateY(-10vh) translateX(0) rotate(0deg);       opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.5; }
+  100% { transform: translateY(110vh) translateX(80px) rotate(360deg);  opacity: 0; }
+}
+@keyframes petal-fall-2 {
+  0%   { transform: translateY(-10vh) translateX(0) rotate(0deg);       opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(110vh) translateX(-60px) rotate(-270deg); opacity: 0; }
+}
+@keyframes petal-fall-3 {
+  0%   { transform: translateY(-10vh) translateX(0) rotate(45deg);      opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(110vh) translateX(40px) rotate(180deg);  opacity: 0; }
+}
+@keyframes petal-fall-4 {
+  0%   { transform: translateY(-10vh) translateX(0) rotate(20deg);      opacity: 0; }
+  10%  { opacity: 0.5; }
+  90%  { opacity: 0.2; }
+  100% { transform: translateY(110vh) translateX(-100px) rotate(320deg); opacity: 0; }
+}
+
+@keyframes mandala-spin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+@keyframes mandala-spin-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg);   }
+}
+
+@keyframes gold-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); }
+  50%       { filter: drop-shadow(0 0 28px rgba(212, 175, 55, 0.95)); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes countdown-tick {
+  0%   { transform: scale(1);    }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1);    }
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #D4AF37 0%, #F0D060 30%, #D4AF37 50%, #A88520 70%, #D4AF37 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-shimmer 4s linear infinite;
+}
+
+.mandala-spin-slow         { animation: mandala-spin 60s linear infinite; }
+.mandala-spin-slow-reverse { animation: mandala-spin-reverse 80s linear infinite; }
+.ganpati-glow              { animation: pulse-glow 3s ease-in-out infinite; }
+.float-slow                { animation: gentle-float 4s ease-in-out infinite; }
