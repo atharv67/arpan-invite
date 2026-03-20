@@ -180,6 +180,14 @@ export const weddingConfig: WeddingConfig = {
     { name: "Padamkar Sutrave", relation: "Bride's Father", phone: "+91 98000 00002" },
   ],
 
+  // ─── MUSIC ────────────────────────────────────────────────────────────────
+  // Drop your MP3 into public/music/ and update the src path below.
+  // The player is a small floating button — guests click to play/pause.
+  music: {
+    src: "/music/01 Saathiya (Flute Version).m4a",   // ← replace with your actual filename
+    label: "Saathiya Instrumental",    // ← shown in the tooltip on hover
+  },
+
   // ─── META ─────────────────────────────────────────────────────────────────
   meta: {
     siteTitle: "Arpan & Shivani — 14 Feb 2026",

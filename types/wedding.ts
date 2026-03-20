@@ -67,6 +67,10 @@ export interface WeddingConfig {
     relation: string;
     phone: string;
   }[];
+  music: {
+    src: string;    // path relative to /public, e.g. "/music/instrumental.mp3"
+    label: string;  // shown in the tooltip, e.g. "Shehnai Instrumental"
+  };
   meta: {
     siteTitle: string;
     ogImage: string; // path relative to /public

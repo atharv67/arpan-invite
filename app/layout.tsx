@@ -69,7 +69,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={fontVars}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+      </body>
     </html>
   );
 }
